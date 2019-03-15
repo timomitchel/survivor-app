@@ -19,6 +19,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'bcrypt'
+gem 'turbolinks'
 
 group :test do
   gem 'shoulda-matchers', '4.0.0.rc1'
