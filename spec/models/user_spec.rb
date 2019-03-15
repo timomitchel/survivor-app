@@ -6,10 +6,11 @@ RSpec.describe User, type: :model do
     it {should validate_uniqueness_of(:username)}
     it {should validate_presence_of(:password)}
   end
-  describe "relationships" do 
+  describe "relationships and defaults" do 
     it "has many teams" do
       user = build(:user)
       expect(user).to respond_to(:teams)
+      expect(user.points).to eq(0.0)
     end
   end
 end
