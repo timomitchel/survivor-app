@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Team:</strong>
-  <%= @user.team %>
-</p>
+<h1 class="header"> Welcome, <%= @user.username %>!</h1>
+  <strong>Your Teams:</strong>
+  <% @user.teams.each do |team| %>
+<div>
+  <%= team %>
+</div>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
