@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @teams = Team.all.order(:city)
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -69,7 +71,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:email, :password, :first_name, :last_name)
     end
 
     def add_teams(user)

@@ -1,12 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="header"> Welcome, <%= @user.username %>!</h1>
-  <strong>Your Teams:</strong>
-  <% @user.teams.each do |team| %>
-<div>
-  <%= team.name %>
+<div class="typewriter-wrapper">
+  <div>
+    <h1 class="typewriter-text line-1">Welcome, <%= @user.email %>!</h1>
+  </div>
 </div>
-<% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="typewriter-wrapper">
+  <div>
+    <h1 class="typewriter-text line-1">Pick one team for the week. Good luck!</h1>
+  </div>
+</div>
+<div class="teams">
+  <%  @teams.each do |team| %>
+      <%= button_to "user_team",
+                    action: "create",
+                    data: { confirm: "Are you sure?", disable_with: "Please wait..."},
+                    params: {team_pick: team.city},
+                    form_class: "btn btn-primary btn-block team-city",
+                    class: "btn btn-primary team-city" do %>
+          <%= team.city %>
+      <% end %>
+    <% end %>
+</div>
