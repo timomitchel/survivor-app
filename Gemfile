@@ -16,10 +16,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 4.0'
 gem 'faraday'
 gem 'bootstrap', '~> 4.3.1'
-gem 'simple_form'
+gem "bootstrap_form", "~> 4.0"
 gem 'jquery-rails'
 gem 'bcrypt'
 gem 'turbolinks'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'hover-rails'
+
 
 group :test do
   gem 'shoulda-matchers', '4.0.0.rc1'
