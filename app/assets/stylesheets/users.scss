@@ -1,3 +1,69 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.form-group {
+  text-align: center;
+  font-weight: bold;
+}
+.teams {
+  display: flex;
+  white-space: pre;
+  flex-flow: wrap;
+}
+
+form.btn.btn-primary.btn-block.team-city{
+  background: white;
+  border: none;
+  flex:auto;
+  max-width: max-content;
+}
+.btn.btn-primary.btn-block.team-city {
+  flex: auto;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+body {
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Anonymous Pro', monospace;
+}
+
+.typewriter-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.typewriter-text {
+  position: relative;
+  margin: 2rem auto;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 1px solid white;
+}
+
+.line-1 {
+  animation: type 2s 0.5s steps(30, end) forwards,
+  blink .5s step-end infinite;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent
+  }
+  50% {
+    border-color: white
+  }
+}

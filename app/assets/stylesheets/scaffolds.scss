@@ -1,4 +1,9 @@
 body {
+  background: url('Kittle.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
   background-color: #fff;
   color: #333;
   margin: 33px;
@@ -13,24 +18,25 @@ p, ol, ul, td {
   line-height: 18px;
 }
 
+h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
 
-a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
+.navbar {
+  background-color: #E1E1E1;
 }
+
+a {
+  padding: 10px;
+}
+
 
 th {
   padding-bottom: 5px;
@@ -80,5 +86,6 @@ div {
 }
 
 label {
+  color: #ffffff;
   display: block;
 }
