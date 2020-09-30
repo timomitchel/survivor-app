@@ -5,10 +5,20 @@
   text-align: center;
   font-weight: bold;
 }
+
 .teams {
   display: flex;
   white-space: pre;
   flex-flow: wrap;
+}
+
+.header {
+  background-image: linear-gradient(to right, #34e89e, #ec2F4B);
+  color: white;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #bbb;
 }
 
 form.btn.btn-primary.btn-block.team-city{
