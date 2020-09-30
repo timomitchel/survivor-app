@@ -2,15 +2,12 @@
 
 <div class="typewriter-wrapper">
   <div>
-    <h1 class="typewriter-text line-1">Welcome, <%= @user.email %>!</h1>
+    <h1 class="typewriter-text line-1">Welcome, <%= @user.first_name ? @user.first_name : @user.email%>!</h1>
   </div>
 </div>
+<h2 class="header">This week's pick: <%= current_pick %></h2>
 
-<div class="typewriter-wrapper">
-  <div>
-    <h1 class="typewriter-text line-1">Pick one team for the week. Good luck!</h1>
-  </div>
-</div>
+<h3 class="header">Available Teams</h3>
 <div class="teams">
   <%  @teams.each do |team| %>
       <%= button_to "user_team",

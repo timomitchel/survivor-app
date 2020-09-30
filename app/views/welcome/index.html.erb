@@ -1,0 +1,24 @@
+<h1>NFL Games Week <%= current_week %></h1>
+<div class="cards">
+  <% @games.each_with_index do |game, index| %>
+    <% cache(game) do %>
+    <div id=<%="#{index}"%>, class="card" style="width: 18rem; margin: 5px;">
+      <div class="card-body">
+        <h5 class="card-title">(a) <%= game.away_team %> VS (h) <%= game.home_team %> </h5>
+        <h6 class="card-subtitle mb-2 text-muted">Line: <%= game.spread %> | O/U: <%= game.over_under %></h6>
+        <p class="card-text"><%= game.stadium %> | <%= game.stadium_loaction %>   <%= game.forecast %></p>
+         <%=  link_to "#{game.away_team}",
+                        make_pick_path(:abbrev => game.away_team),
+                        method: :post,
+                        class: "card-link",
+                        data: {confirm: "Are you sure you would like to pick #{game.away_team} for Week #{current_week}?"}%>
+         <%=  link_to "#{game.home_team}",
+                      make_pick_path(:abbrev => game.away_team),
+                      method: :post,
+                      class: "card-link",
+                      data: {confirm: "Are you sure you would like to pick #{game.home_team} for Week #{current_week}?"}%>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
