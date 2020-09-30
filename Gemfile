@@ -22,6 +22,8 @@ gem 'bcrypt'
 gem 'turbolinks'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'hover-rails'
+gem 'figaro'
+gem 'actionpack-action_caching'
 
 
 group :test do
