@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "user can pick a team" do
 
-  scenario "user picks a valid team name" do
+  xscenario "user picks a valid team name" do
     # As a user
     # When I visit "/"
     visit '/'
