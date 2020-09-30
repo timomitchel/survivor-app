@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200926215828) do
+ActiveRecord::Schema.define(version: 20200930155803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,11 +52,12 @@ ActiveRecord::Schema.define(version: 20200926215828) do
   end
 
   create_table "weeks", force: :cascade do |t|
-    t.integer "number"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.bigint "season_id"
+    t.integer "number"
     t.index ["season_id"], name: "index_weeks_on_season_id"
   end
 
   add_foreign_key "user_teams", "weeks"
-  add_foreign_key "weeks", "seasons"
 end
