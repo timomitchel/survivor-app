@@ -7,6 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'pry'
 
+def create_weeks_2020
+  @start_time = DateTime.parse('8-9-2020').beginning_of_day
+  @end_time = Date.parse('14-9-2020').end_of_day
+  20.times do |index|
+    Week.create!(season_id: 1, start_time: @start_time, end_time: @end_time, number: index + 1)
+    @start_time = @start_time + 7.days
+    @end_time = @end_time + 7.days
+  end
+end
+
 def nfl_team_data
   return [
     {
@@ -238,9 +248,11 @@ end
 Team.delete_all
   nfl_team_data.each do |team|
     Team.create(name: team[:name],
-                available: true, 
-                city: team[:city], 
-                abbreviation: team[:abr], 
-                conference: team[:conf], 
+                available: true,
+                city: team[:city],
+                abbreviation: team[:abr],
+                conference: team[:conf],
                 division: team[:div])
   end
+
+  create_weeks_2020

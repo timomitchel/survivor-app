@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= Figaro.env.my_heroku_production_url %>
   database: survivor-app_production
   username: survivor-app
   password: <%= ENV['SURVIVOR-APP_DATABASE_PASSWORD'] %>
