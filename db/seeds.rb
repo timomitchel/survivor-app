@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'pry'
 
 def create_weeks_2020
   @start_time = DateTime.parse('8-9-2020').beginning_of_day
