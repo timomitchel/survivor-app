@@ -3,7 +3,6 @@ class Week < ApplicationRecord
   has_many :user_teams, dependent: :destroy
   has_many :teams, through: :user_teams
   has_many :users, through: :user_teams
-
-  validates_presence_of :number
-
+  
+  validates_presence_of :start_time, :end_time, :number
 end
